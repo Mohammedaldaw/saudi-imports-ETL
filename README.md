@@ -10,8 +10,8 @@ The project follows a modular **ETL (Extract, Transform, Load)** workflow:
 
 ```mermaid
 graph LR
-    A[Raw CSVs (Arabic/CP1256)] -->|src/extract.py| B(Pandas DataFrame)
-    B -->|src/clean.py| C{Data Cleaning & Renaming}
+    A["Raw CSVs (Arabic/CP1256)"] -->|src/extract.py| B(Pandas DataFrame)
+    B -->|src/clean.py| C{Data Cleaning}
     C -->|Normalization| D[Standardized Schema]
     D -->|src/load.py| E[(PostgreSQL Database)]
     E -->|SQL| F[Analysis]
